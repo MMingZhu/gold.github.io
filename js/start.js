@@ -358,8 +358,10 @@
             if(centerObj.user.line.w!=centerObj.user.bufW)return;
             centerObj.user.grabFun(centerObj);
             centerObj.user.colFun(centerObj.stArr);
-
-            window.parent.postMessage(centerObj, '*');  // TEST 
+            window.parent.postMessage({
+                totalNum: centerObj.user.totalNum,
+                
+            }, '*');  // TEST 
 
         }
         if(e.keyCode==68|| e.keyCode==39){

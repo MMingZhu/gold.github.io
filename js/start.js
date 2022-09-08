@@ -337,6 +337,7 @@
         centerObj.user.moveRight();
     }
     document.getElementById("gou").onclick=function(){
+        if(centerObj.user.num>=gsImgInfo[centerObj.gs][2])return;// 达到通关要求 return
         if(centerObj.user.line.w!=centerObj.user.bufW)return;
             centerObj.user.grabFun(centerObj);
             centerObj.user.colFun(centerObj.stArr);
@@ -353,9 +354,13 @@
     window.onkeydown=function(e){
         e= e||window.event;
         if(e.keyCode==74|| e.keyCode==40){
+            if(centerObj.user.num>=gsImgInfo[centerObj.gs][2])return; // 达到通关要求 return
             if(centerObj.user.line.w!=centerObj.user.bufW)return;
             centerObj.user.grabFun(centerObj);
             centerObj.user.colFun(centerObj.stArr);
+
+            window.parent.postMessage(centerObj, '*');  // TEST 
+
         }
         if(e.keyCode==68|| e.keyCode==39){
             centerObj.user.moveLeft();

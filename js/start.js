@@ -312,7 +312,7 @@
 
     // 禁用双击放大
     var lastTouchEnd = 0;
-    document.documentElement.addEventListener('touchend', function (event) {
+    document.addEventListener('touchend', function (event) {
         var now = Date.now();
         if (now - lastTouchEnd <= 300) {
             event.preventDefault();

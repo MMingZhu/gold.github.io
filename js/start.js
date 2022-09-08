@@ -111,10 +111,12 @@
         centerObj.nowTime=0;
         centerObj.gs++;
         localStorage.gs=centerObj.gs;
+        localStorage.totalNum=centerObj.user.totalNum;
         gsInfo(centerObj.gs);
     }
     function continueFun(){
         centerObj.model.close();
+        centerObj.user.totalNum=centerObj.user.totalNum-centerObj.user.num;
         centerObj.user.num=0;
         centerObj.nowTime=0;
         gsInfo(centerObj.gs);
@@ -273,6 +275,7 @@
                 document.getElementById("operateBtn-box").style.opacity = 1
             }
             if(METHOD.inRect(point,rectStart02)){
+                centerObj.user.totalNum = Number(localStorage.totalNum) || 0
                 gsInfo(typeof localStorage.gs=="undefined"?0:localStorage.gs);
                 centerObj.start=true;
                 document.getElementById("operateBtn-box").style.opacity = 1
@@ -360,7 +363,7 @@
             centerObj.user.colFun(centerObj.stArr);
             window.parent.postMessage({
                 totalNum: centerObj.user.totalNum,
-                
+
             }, '*');  // TEST 
 
         }

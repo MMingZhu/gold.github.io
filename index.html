@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8" content="text/html" />
+    <title>挖矿人</title>
+
+    <!-- 基本类-->
+    <script type="text/javascript" src="HGame.js"></script>
+	
+    <!-- 提示库 可以用METHOD.showMethod显示METHOD的方法-->
+    <script type="text/javascript" src="js/methodSay.js"></script>
+	
+    <!-- 扩展类-->
+    <script type="text/javascript" src="js/objProto.js"></script>
+    <script type="text/javascript" src="js/data.js"></script>
+	
+    <style>
+        body{
+            margin: 80px 0 0 0;
+            padding: 0;
+        }
+		b{color: crimson}
+        .operateBtn{
+            width: 100px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .operateBtn:first-child{
+            background: red;
+        }
+        .operateBtn:nth-child(2){
+            background: green;
+            margin-left: 10px;
+        }
+        .operateBtn:nth-child(3){
+            background: yellow;
+            margin-left: 10px;
+        }
+        #operateBtn-box{
+            opacity: 0;
+        }
+    </style>
+	
+</head>
+<body style="text-align:center;">
+    <div style="background-color: rgba(0,0,0,1);display: inline-block;font-size:0;" id="demo">
+    </div>
+
+<div style="width:500px;margin:auto;" id="operateBtn-box">
+    <div style="display: flex; justify-content: center;">
+        <div id="moveRight" class="operateBtn">moveLeft</div>
+        <div id="moveLeft" class="operateBtn">moveRight</div>
+        <div id="gou" class="operateBtn">gou</div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/start.js"></script>
+
+</body>
+</html>
